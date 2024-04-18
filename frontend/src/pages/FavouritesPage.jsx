@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function FavoritesPage() {
+function FavouritesPage() {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
@@ -9,9 +9,10 @@ function FavoritesPage() {
 
   const fetchFavorites = async () => {
     try {
-      const response = await fetch('http://localhost:8080/universities/favorites');
+      const response = await fetch('http://localhost:8080/universities/favourites');
       const data = await response.json();
       setFavorites(data);
+      console.log(data);
     } catch (error) {
       console.error('Error fetching favorites: ', error);
     }
@@ -48,4 +49,4 @@ function FavoritesPage() {
   );
 }
 
-export default FavoritesPage;
+export default FavouritesPage;
